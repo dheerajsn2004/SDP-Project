@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transaction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<!-- Overlay for background transparency -->
+<div class="overlay"></div>
+
+<!-- Main content -->
+<div class="container">
+    <h1>Edit Transaction</h1>
+    <form action="/edit/{{ transaction.id }}" method="post">
+        <label for="date">Date</label>
+        <input type="date" name="date" value="{{ transaction.date }}" required>
+
+        <label for="type">Type</label>
+        <select name="type" required>
+            <option value
